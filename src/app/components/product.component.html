@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-title">
+        <h3 appHighlight class="title">{{ product.title | uppercase }}</h3>
+    </div>
+    <div class="card-img">
+        <img [src]="product.image" [alt]="product.title">
+    </div>
+    <div class="card-price">
+        <p><strong>{{ product.price | currency }}</strong></p>
+        <!-- <p>{{ product.description | slice:0:10 }}</p> -->
+        <!-- <p>{{ today | date }}</p> -->
+        <!-- <p>{{ today | date:'medium' }}</p> -->
+    </div>
+    <div class="card-button">
+        <button (click)="addCart()"><span class="button-text">Agregar al carrito</span></button>
+        <a [routerLink]="['/products', product.id]">Ver detalle</a>
+    </div>
+</div>

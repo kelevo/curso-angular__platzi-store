@@ -1,0 +1,68 @@
+<input type="text" [(ngModel)]="title">
+<br>
+{{ title }}
+
+<input type="text" [(ngModel)]="power">
+{{ power | exponential }}
+
+<!--El contenido del if solo se muetra si la condicion es verdadera /////////////////-->
+<!-- <div *ngIf="title === 'patrick'">
+  Bienvenido Patrick
+</div>
+
+<div *ngIf="title === 'elizabeth'">
+  Bienvenida Elizabeth
+</div>
+
+<div *ngIf="title === 'bruno'">
+  Bienvenido Bruno
+</div> -->
+
+<!--Multiples opciones-->
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'patrick'">Bienvenido Patrick</p>
+  <p *ngSwitchCase="'elizabeth'">Bienvenida Elizabeth</p>
+  <p *ngSwitchCase="'bruno'">Bienvenido Bruno</p>
+  <p *ngSwitchCase>Bienvenido extranio</p>
+</div>
+
+<br>
+
+<!--ngFor, add y delete /////////////////////////////////////////-->
+<!--Agregar item-->
+<h1>ngFor, add y delete</h1>
+<br>
+<button (click)="addItem()">Add item</button>
+<br>
+
+<ul>
+  <li *ngFor="let i of items">
+    {{ i }}
+  </li>
+</ul>
+
+<!--Iterar por posicion-->
+<ul>
+  <li *ngIf="items.length === 0">La lista esta vacia</li>
+  <li *ngFor="let k of items; index as l">
+    {{ k }} {{ l }}
+    <button (click)="deleteItem(l)">Delete</button>
+  </li>
+</ul>
+<br>
+
+<!--Ejercicio para guardar lo que ingresemos en el input-->
+<input type="text" [(ngModel)]="fruit">
+<br>
+{{ fruit }}
+<br>
+<button (click)="addFruit()">Add Fruit</button>
+<br>
+<ul>
+  <li *ngIf="fruits.length === 0">La lista esta vacia</li>
+  <li *ngFor="let fruit of fruits; index as i">
+    {{ i }} {{ fruit }}
+    <button (click)="deleteFruit(i)">Delete Fruit</button>
+  </li>
+</ul>
+<br>
