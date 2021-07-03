@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // Importacion de modelo para los productos
-import { Product } from '../product.model';
+import { Product } from '../../../product.model';
 
 @Component({
   selector: 'app-products',
