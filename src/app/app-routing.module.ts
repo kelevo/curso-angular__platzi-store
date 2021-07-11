@@ -11,7 +11,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: '/home',
         pathMatch: 'full',
       },
       {
@@ -35,6 +35,10 @@ const routes: Routes = [
         loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
       },
     ]
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
   {
     path: '**',
