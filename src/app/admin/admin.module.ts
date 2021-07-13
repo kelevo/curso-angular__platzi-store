@@ -10,9 +10,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TableComponent } from './components/table/table.component';
 
 import { MaterialModule } from '../material/material.module';
+import { FormProductComponent } from './components/form-product/form-product.component';
 
 @NgModule({
-  declarations: [ProductFormComponent, NavComponent, ProductsListComponent, DashboardComponent, TableComponent],
+  declarations: [ProductFormComponent, NavComponent, ProductsListComponent, DashboardComponent, TableComponent, FormProductComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
