@@ -11,6 +11,8 @@ import {
 } from '@angular/core';
 import { Product } from '../../../core/models/product.model';
 
+import { CartService } from 'src/app/core/services/cart/cart.service';
+
 @Component({
     selector: 'app-product',
     templateUrl: './product.component.html',
@@ -25,7 +27,9 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
     today = new Date();
 
     // Aqui se construye el componente
-    constructor() {
+    constructor(
+        private cartService: CartService
+    ) {
         console.log('1._ constructor');
     }
 
@@ -54,7 +58,8 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
     addCart() {
         console.log('Aniadir al carrito');
         // Emitimos de acuerdo al valor colocado en la parte de arriba
-        this.productClicked.emit(this.product.id);
+        //this.productClicked.emit(this.product.id);
+        this.cartService.addCart(this.product);
     }
 
 }
