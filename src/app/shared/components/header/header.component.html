@@ -15,7 +15,7 @@
                     Contactanos
                 </a>
             </nav>
-            <a mat-raised-button [matBadge]="total" href="#">
+            <a routerLink="/order" mat-raised-button [matBadge]="total$ | async" href="#">
                 <mat-icon>shopping_cart</mat-icon>
                 Carrito
             </a>
