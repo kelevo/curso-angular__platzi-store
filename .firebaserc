@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-store-df14a": {
+      "hosting": {
+        "platzi-store": [
+          "angular-store-df14a"
+        ]
+      }
+    }
+  }
+}
